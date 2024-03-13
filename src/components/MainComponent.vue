@@ -5,9 +5,9 @@ import ProjectCard from './ProjectCard.vue';
 export default {
     data() {
         return {
-          posts: [],
-          currentPage: 1,
-          lastPage: 1,
+          // posts: [],
+          // currentPage: 1,
+          // lastPage: 1,
         };
     },
     components:{
@@ -49,9 +49,6 @@ export default {
 
 <template>
   <main>
-    <h1>
-      Tutti i post
-    </h1>
 
     <ProjectCard />
     <!-- <h3>
@@ -96,7 +93,4 @@ export default {
 </template>
 
 <style scoped>
-.card{
-  border: 1px solid black; 
-}
 </style>
