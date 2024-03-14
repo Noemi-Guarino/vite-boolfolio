@@ -1,6 +1,6 @@
 <script>
 import axios from 'axios';
-import ProjectCard from './ProjectCard.vue';
+import ProjectCard from './pages/ProjectCard.vue';
 
 export default {
     data() {
@@ -10,9 +10,9 @@ export default {
           // lastPage: 1,
         };
     },
-    components:{
-      ProjectCard,
-    }
+    // components:{
+    //   ProjectCard,
+    // }
     // created(){
     //   this.getPosts(this.currentPage)
     // },
@@ -49,8 +49,8 @@ export default {
 
 <template>
   <main>
-
-    <ProjectCard />
+    <router-view></router-view>  
+    <!-- <ProjectCard /> -->
     <!-- <h3>
       Pagina attuale {{ currentPage }}|Ultima pagina  {{ lastPage }}
     </h3> -->
@@ -93,4 +93,4 @@ export default {
 </template>
 
 <style scoped>
-</style>
+</style>./pages/ProjectCard.vue

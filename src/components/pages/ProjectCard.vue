@@ -70,6 +70,13 @@ export default {
               </li>
             </ul>
           </div>
+          <div>
+            <button>
+              <router-link :to="{ name: 'posts.show   ', params: { slug: post.slug } }" class="btn btn-primary">
+                 Vedi post completo 
+              </router-link>
+            </button>
+          </div>
         </div>
       </div>
 
