@@ -126,7 +126,7 @@ export default {
   justify-content: center;
 }
 
-.specialbutton {
+button {
   background-color: #008CBA;
   border: none;
   color: white;
@@ -139,6 +139,7 @@ export default {
   transition-duration: 0.4s;
   cursor: pointer;
 }
+
 
 button:hover {
   background-color: white;
