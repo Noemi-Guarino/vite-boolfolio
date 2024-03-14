@@ -31,7 +31,7 @@ export default {
 
     <div class="container">
       <div class="contentpage">
-        <div class="card">
+        <div v-if="post != null" class="card">
           <div class="topcard">
             <div v-if="post.cover_img !=null">
               <img :src="'http://127.0.0.1:8000/storage/' + post.cover_img" :alt="post.title">
@@ -50,7 +50,7 @@ export default {
               </li>
             </ul>
           </div>
-        </div>
+         </div>
       </div>
     </div>
 
