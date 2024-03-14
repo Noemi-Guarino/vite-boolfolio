@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import IndexPage from './components/pages/IndexPage.vue';
 import ProjectCard from './components/pages/ProjectCard.vue';
 import SingleCard from './components/pages/SingleCard.vue';
+import NotFoundPage from './components/pages/NotFoundPage.vue';
 
 const router = createRouter({
 history: createWebHistory(),
@@ -22,6 +23,11 @@ routes: [
             name: 'posts.show',
             component: SingleCard
         },
+        {
+            path: '/:pathMatch(.*)*',
+            name: 'NotFound',
+            component: NotFoundPage
+            },
     ]
 });
 export { router };

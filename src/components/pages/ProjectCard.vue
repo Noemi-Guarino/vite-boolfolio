@@ -71,8 +71,8 @@ export default {
             </ul>
           </div>
           <div>
-            <button>
-              <router-link :to="{ name: 'posts.show   ', params: { slug: post.slug } }" class="btn btn-primary">
+            <button class="specialbutton">
+              <router-link :to="{ name: 'posts.show', params: { slug: post.slug } }" class="btn btn-primary">
                  Vedi post completo 
               </router-link>
             </button>
@@ -126,11 +126,11 @@ export default {
   justify-content: center;
 }
 
-button {
+.specialbutton {
   background-color: #008CBA;
   border: none;
   color: white;
-  padding: 13px 23px;
+  padding: 7px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -139,10 +139,20 @@ button {
   transition-duration: 0.4s;
   cursor: pointer;
 }
+
 button:hover {
   background-color: white;
   color: #008CBA;
   border:2px solid #008CBA;
+}
+
+
+.specialbutton> a{
+  color: white;
+}
+
+.specialbutton> a:hover{
+  color: #008CBA;
 }
 
 </style>

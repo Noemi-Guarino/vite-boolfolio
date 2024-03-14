@@ -12,11 +12,14 @@ export default {
     },
     methods: {
       getPost(){
-        axios.get('http://127.0.0.1:8000/api/posts' + this.$route.params.slug)
+        axios.get('http://127.0.0.1:8000/api/posts/' + this.$route.params.slug)
           .then(res=>{
               console.log(res.data); 
-
-              this.post = res.data.results;
+              if(res.data.success){
+                this.post = res.data.results;
+              }else {
+                this.$router.push({ name: 'NotFound' })
+              }
           });
       },
     }
