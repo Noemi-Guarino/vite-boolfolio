@@ -39,9 +39,12 @@ export default {
           message: this.message,
           accepted: this.accepted
         })
-        .then(res=> {
-
-        });
+        .then(res => {
+          console.log('risposta api',res.data);
+        })
+        .catch(error => {   // catch per vedere se la chiamata API è andata in errore
+              console.log('errore axios', error)
+        })
       }
       else{
         alert('Inserisci i dati corretti');
@@ -82,8 +85,8 @@ export default {
       </div>
 
       <div>
-        <label for="accept">Ho letto ed accetto i <a href="#">Termini di condizione</a> e la <a href="#">privacy police</a></label>
         <input type="checkbox" value="1" id="accept" name="accept">
+        <label for="accept">Ho letto ed accetto i <a href="#">Termini di condizione</a> e la <a href="#">privacy police</a></label>
       </div>
 
       <div>
