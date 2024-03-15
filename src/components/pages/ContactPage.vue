@@ -33,7 +33,15 @@ export default {
           &&
           this.accepted 
       ) {
-        axios.post().then()
+        axios.post('http://127.0.0.1:8000/api/contacts', {
+          name: this.name,
+          email: this.email,
+          message: this.message,
+          accepted: this.accepted
+        })
+        .then(res=> {
+
+        });
       }
       else{
         alert('Inserisci i dati corretti');
