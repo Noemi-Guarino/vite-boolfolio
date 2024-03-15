@@ -1,41 +1,87 @@
 <script>
+import axios from 'axios';
 
 export default {
     data() {
         return {
-          message:'Pagina contatti'
+          name:'',
+          email:'',
+          message:'',
+          accepted: false
         };
     },
+    methods:{
+    sendMessage(){
+      // console.log('name',this.name,typeof this.name)
+      if (this.name !=  null 
+          &&
+          this.name != ''
+          &&
+          this.name.length <= 64
+          &&
+          this.email != null
+          && 
+          this.email != ''
+          &&
+          this.email.length <= 255
+          &&
+          this.message != null
+          &&
+          this.message != ''
+          &&
+          this.message.length <= 2048
+          &&
+          this.accepted 
+      ) {
+        axios.post().then()
+      }
+      else{
+        alert('Inserisci i dati corretti');
+      }
+    }
+      },
 
 }
 </script>
 
 <template>
   <h1>
-    {{ message }}
+    Contatti
   </h1>
 
   <div>
-    <form action="">
-      <div>
+    <form  method="POST" @submit.prevent="sendMessage()">
+      <div> 
+        <!-- {{ name }} -->
         <label for="name">
           Nome <span>*</span>
-          <input type="text" id="name" name="name" placeholder="Inserisci il tuo nome">
+          <input v-model="name" type="text" id="name" name="name" placeholder="Inserisci il tuo nome" maxlength="64" required>
         </label>
       </div>
 
       <div>
         <label for="email">
           Email <span>*</span>
-          <input type="text" id="email" name="email" placeholder="Inserisci la tua email">
+          <input v-model="email" type="email" id="email" name="email" placeholder="Inserisci la tua email" maxlength="255" required>
         </label>
       </div>
 
       <div>
         <label for="message">
           Message <span>*</span>
-          <input type="text" id="message" name="message" placeholder="Inserisci il tuo message">
+          <textarea v-model="message" type="text" id="message" name="message" placeholder="Inserisci il tuo message" maxlength="2048" required></textarea>
         </label>
+      </div>
+
+      <div>
+        <label for="accept">Ho letto ed accetto i <a href="#">Termini di condizione</a> e la <a href="#">privacy police</a></label>
+        <input type="checkbox" value="1" id="accept" name="accept">
+      </div>
+
+      <div>
+        <p>
+          Tutti i campi con <span>*</span> sono obbligatori
+        </p>
       </div>
 
       <div>
