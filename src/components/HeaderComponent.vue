@@ -3,14 +3,23 @@
 export default {
     data() {
         return {
-          // message:'header'
+          links:[
+            {
+              routerName:'home',
+              label:'home',
+            },
+            {
+              routerName:'posts.index',
+              label:'blog',
+            },
+            {
+              routerName:'contact',
+              label:'contact',
+            },
+
+          ]
         };
     },
-    // components: {
-    //     AppHeader,
-    //     AppMain,
-    //     AppFooter
-    // },
     methods: {
 
     }
@@ -23,16 +32,22 @@ export default {
     <div>
       <nav>
         <ul>
-          <li>
-            <router-link :to="{ name: 'home' }" class="classe_css">
-              Home page
+          <li v-for="(link,index) in links" :key="index">
+            <router-link :to="{ name: link.routerName }" class="classe_css">
+              {{ link.label }}
             </router-link>
           </li>
-          <li>
+          <!-- <li>
             <router-link :to="{ name: 'posts.index' }" class="classe_css">
               Posts
             </router-link>
           </li>
+          <li>
+            <router-link :to="{ name: 'contact' }" class="classe_css">
+              Contact
+            </router-link>
+          </li>
+ -->
         </ul>
       </nav>
     </div>
